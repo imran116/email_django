@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Send Form</title>
+</head>
+<body>
+    <!-- ***** Email Area Starts ***** -->
+    <div class="subscribe">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="section-heading">
+                        <h2>Send Email </h2>
+
+                        </div>
+                    <form id="subscribe" action="{% url 'send-mail' %}" method="post">
+                    {% csrf_token %}
+                        <div class="row">
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="subject" type="text" id="subject" placeholder="Enter Subject" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-5">
+                            <fieldset>
+                              <input name="message" type="text" id="message" placeholder="Enter message here" required="">
+                            </fieldset>
+                          </div>
+                          <div class="col-lg-2">
+                            <fieldset>
+                              <button type="submit" id="form-submit" class="main-dark-button">Send</button>
+                            </fieldset>
+                          </div>
+                        </div>
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Email Area Ends ***** -->
+</body>
+</html>
