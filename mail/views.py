@@ -37,7 +37,7 @@ class SubscriberView(View):
 def send_subscription_email(name, email):
     subject = 'Subscription Confirmation'
     message = f'Thank you for subscribing, {name}!'
-    from_email = 'hexashophelpcenter@gmail.com'
+    from_email = 'youremail@gmail.com'
     recipient = [email]
 
     email = EmailMessage(subject, message, from_email, recipient)
@@ -64,7 +64,7 @@ class SendMail(View):
 
 
 def send_mails(subject, message, email):
-    from_email = 'hexashophelpcenter@gmail.com'
+    from_email = 'youremail@gmail.com'
     recipient = email
     message = message
     subject = subject
